@@ -23,3 +23,8 @@ model User {
   age           Int
   remainingtime String
 }
+
+model Host {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  username String @unique
+}
