@@ -6,6 +6,7 @@ import {
 } from './schema/member';
 
 import { memberQueries } from '../apollo/resolvers/queries/member';
+import { memberMutations } from './resolvers/mutations/member';
 
 export const userApolloServer = new ApolloServer({
   typeDefs: `
@@ -23,6 +24,6 @@ export const userApolloServer = new ApolloServer({
   resolvers: {
     Query: { ...memberQueries },
 
-    Mutation: {},
+    Mutation: { ...memberMutations },
   },
 });

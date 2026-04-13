@@ -1,15 +1,32 @@
 export const Types = `
     type Member {
         id:         String  
-        name:       String
+        username:   String
         email:      String 
         phone:      Int
-        profile:    String
+        age:        Int
+        balance:    Int
+        remainingtime: String
+
     }
+
+    type Admin {
+        id:         String  
+        username:   String
+    }   
     
     input MemberFilter {
-        name:        String
-        categories:  String
+        username:        String
+        email:           String
+        phone:           Int
+    }
+
+    input memberInput {
+        username:   String
+        email:      String
+        phone:      Int
+        age:        Int
+        balance:    Int
     }
 `;
 
@@ -19,5 +36,5 @@ export const Queries = `
 `;
 
 export const Mutations = `
-    memberReview(orderNumber: String, review: String, rating: Float): Member
+    memberReview(input: memberInput): Member
 `;
