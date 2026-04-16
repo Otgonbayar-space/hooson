@@ -13,7 +13,7 @@ export const memberMutations = {
       password,
       remainingtime,
     });
-    return prisma.user.create({
+    return prisma.member.create({
       data: {
         username,
         email,
